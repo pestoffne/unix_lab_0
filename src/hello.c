@@ -2,5 +2,5 @@
 #include <stdio.h>
 
 void say_hello() {
-    printf(HEY);
+    printf(HELLO_MESSAGE);
 }

@@ -1,16 +1,19 @@
-INC=./includes
-SRC=./src
-OUT=./bin
+INC=include
+SRC=src
+OUT=build
+CC=gcc
 
 
-$(OUT)/lab: $(OUT)/main.o $(OUT)/hello.o
-	gcc -o $(OUT)/lab $(OUT)/main.o $(OUT)/hello.o 
+${OUT}/a.out: ${OUT}/main.o ${OUT}/hello.o
+	${CC} -o ${OUT}/a.out ${OUT}/main.o ${OUT}/hello.o
 
-$(OUT)/main.o: $(SRC)/main.c $(INC)/hello.h
-	gcc -I$(INC) -o $(OUT)/main.o -c $(SRC)/main.c
+${OUT}/main.o: ${SRC}/main.c ${INC}/hello.h
+	${CC} -o ${OUT}/main.o -c ${SRC}/main.c -I${INC}
 
-$(OUT)/hello.o: $(SRC)/hello.c $(INC)/hello.h
-	gcc -I$(INC) -o $(OUT)/hello.o -c $(SRC)/hello.c
+${OUT}/hello.o: ${SRC}/hello.c ${INC}/hello.h
+	${CC} -o ${OUT}/hello.o -c ${SRC}/hello.c -I${INC}
 
 clean:
-	rm $(OUT)/*.o $(OUT)/lab
+	rm -f ${OUT}/*
+
+.PHONY: clean

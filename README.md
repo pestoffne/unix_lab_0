@@ -1,13 +1,17 @@
-Description:
-Сильно усложнённый hello_world из нулевой лекции Кудрявцева.
-Все команды запускаются из корня проекта.
+Makefile hello world
+
 
 How to build:
-$ mkdir -p bin
+```
 $ make
+```
 
 How to run:
-$ ./bin/lab
+```
+$ ./bin/a.out
+```
 
 How to clean:
+```
 $ make clean
+```
